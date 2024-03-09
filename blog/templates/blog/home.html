@@ -1,0 +1,67 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+<div></div>
+<section>
+    <h2 class="center">Velkommen til Sorteringsverktøyet!</h2>
+
+    <p class="center">Dette verktøyet lar deg enkelt kunne filtrere tepper basert på pris og størrelse.</p>
+    <p class="center">Benytt deg av skjemaet nedenfor for å sette i gang!</p>
+</section>
+
+
+<form action="/søk">
+    <div>
+        <div class="row mb-3">
+            <div class="col-sm">
+                <label for="Pris" class="form-label">Pris:</label>
+                <input min="0" type="number" class="form-control" id="Pris" name="Pris" required
+                    placeholder="{{verdier.pris}}">
+            </div>
+            <div class="col-sm">
+                <label for="Solgt" class="form-label">Vis solgte produkter:</label>
+                <select class="form-control" id="Solgt" name="Solgt">
+                    <option value="1">Nei</option>
+                    <option value="0">Ja</option>
+                </select>
+            </div>
+        </div>
+
+
+
+        <div class="row mb-3">
+            <div class="col-sm">
+                <label for="minBredde" class="form-label">Minimum bredde:</label>
+                <input type="number" min="0" class="form-control" id="minBredde" name="minBredde" required
+                    placeholder="Skriv i CM">
+            </div>
+            <div class="col-sm">
+                <label for="maksBredde" class="form-label">Maksimum bredde:</label>
+                <input type="number" min="0" class="form-control" id="maksBredde" name="maksBredde" required
+                    placeholder="Skriv i CM">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm">
+                <label for="minLengde" class="form-label">Minimum lengde:</label>
+                <input type="number" min="0" class="form-control" id="minLengde" name="minLengde" required
+                    placeholder="Skriv i CM">
+            </div>
+            <div class="col-sm">
+                <label for="maksLengde" class="form-label">Maksimum lengde:</label>
+                <input type="number" min="0" class="form-control" id="maksLengde" name="maksLengde" required
+                    placeholder="Skriv i CM">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm center">
+                <input type="submit" class="btn btn-primary" value="Søk etter tepper">
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}
