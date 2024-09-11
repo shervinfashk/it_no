@@ -6,6 +6,11 @@ Motivasjonen bak dette prosjektet har vært å gjøre det enklere for deltidsans
 I tillegg til å kunne hjelpe familieforetningen ønsket jeg å lære meg et nytt rammeverk og lære mer om webutvikling. 
 
 
+---
+
+Opprinnelig var prosjektet hostet på en Linux-server gjennom OceanCloud, men nå kjøres det på localhost når det brukes og jeg har derfor laget en kort videodemonstrasjon for å vise hvordan nettsiden fungerer.
+
+[Video Demo](youtube.com) // kommer snart
 
 
 
