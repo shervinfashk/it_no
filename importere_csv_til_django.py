@@ -2,7 +2,6 @@ import os
 import django
 import csv
 
-# Erstatt 'it_no' med navnet på din Django-konfigurasjonsmodul, normalt <prosjektnavn>.settings
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'it_no.settings')
 django.setup()
 
