@@ -1,0 +1,143 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+{% if posts %}
+<h1>Her er treffene dine.</h1>
+
+<form action="/sok">
+    <div>
+        <div class="row mb-3">
+            <div class="col-sm">
+                <label for="Pris" class="form-label">Pris:</label>
+                <input min="0" type="number" class="form-control" id="Pris" name="Pris" required
+                    placeholder="{{verdier.pris}}">
+            </div>
+            <div class="col-sm">
+                <label for="Solgt" class="form-label">Vis solgte produkter:</label>
+                <select class="form-control" id="Solgt" name="Solgt">
+                    <option value="1">Nei</option>
+                    <option value="0">Ja</option>
+                </select>
+            </div>
+        </div>
+
+
+
+        <div class="row mb-3">
+            <div class="col-sm">
+                <label for="minBredde" class="form-label">Minimum bredde:</label>
+                <input type="number" min="0" class="form-control" id="minBredde" name="minBredde" required
+                    placeholder="{{verdier.minBredde}}">
+            </div>
+            <div class="col-sm">
+                <label for="maksBredde" class="form-label">Maksimum bredde:</label>
+                <input type="number" min="0" class="form-control" id="maksBredde" name="maksBredde" required
+                    placeholder="{{verdier.maksBredde}}">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm">
+                <label for="minLengde" class="form-label">Minimum lengde:</label>
+                <input type="number" min="0" class="form-control" id="minLengde" name="minLengde" required
+                    placeholder="{{verdier.minLengde}}">
+            </div>
+            <div class="col-sm">
+                <label for="maksLengde" class="form-label">Maksimum lengde:</label>
+                <input type="number" min="0" class="form-control" id="maksLengde" name="maksLengde" required
+                    placeholder="{{verdier.maksLengde}}">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm center">
+                <input type="submit" class="btn btn-primary" value="Søk etter tepper">
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="container" style="min-height: 100vh;">
+    <!-- Justerer kolonnene innenfor denne raden til å være sentrert -->
+    <div class="row justify-content-center">
+        {% for inn in posts %}
+        <!-- Definerer en kolonne for hvert kort -->
+        <div class="col-md-4 my-3 d-flex align-items-stretch">
+            <!-- Kort som strekker seg for å fylle kolonnens høyde -->
+            <div class="card w-100">
+                <!-- Antar at du har bilder i 16:9-format - endre høyde/bredde etter behov -->
+                <img src="{{inn.IMAGE}}" class="card-img-top" alt="{{inn.TITLE}}"
+                    style="height:180px; object-fit:cover;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ inn.TITLE }}</h5>
+                    <p class="card-text">Bredde: {{ inn.WIDTH }}<br>Lengde: {{ inn.LENGTH }}<br>Pris: {{inn.PRICE}}</p>
+                    <!-- Tillegg - prisinformasjon kan gå her -->
+                </div>
+                <div class="card-footer">
+                    <a href="https://saeidstepper.no/products/{{inn.HANDLE}}" class="btn btn-primary">Se produktet</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<br>
+<h1 class="text-center">Søket ditt ga ingen treff</h1>
+<p>Dette er sansynligvis på grunn av at prisen er for lav eller at vi ikke har tepper innenfor størrelsen du søker etter.<br>Persiske tepper har en gjennomsnittlig kvadratmeterpris på ca. 5000kr.<br>Persiske tepper er unike og har derfor ikke helt eksakte mål. Hvis du lurer på hva standardmålene er kan du få inspirasjon fra <a href="https://saeidstepper.no/">Saeids Tepper sine nettsider</a>  </p>
+<form action="/sok">
+    <div>
+        <div class="row mb-3">
+            <div class="col-sm">
+                <label for="Pris" class="form-label">Pris:</label>
+                <input min="0" type="number" class="form-control" id="Pris" name="Pris" required
+                    placeholder="{{verdier.pris}}">
+            </div>
+            <div class="col-sm">
+                <label for="Solgt" class="form-label">Vis solgte produkter:</label>
+                <select class="form-control" id="Solgt" name="Solgt">
+                    <option value="1">Nei</option>
+                    <option value="0">Ja</option>
+                </select>
+            </div>
+        </div>
+
+
+
+        <div class="row mb-3">
+            <div class="col-sm">
+                <label for="minBredde" class="form-label">Minimum bredde:</label>
+                <input type="number" min="0" class="form-control" id="minBredde" name="minBredde" required
+                    placeholder="{{verdier.minBredde}}">
+            </div>
+            <div class="col-sm">
+                <label for="maksBredde" class="form-label">Maksimum bredde:</label>
+                <input type="number" min="0" class="form-control" id="maksBredde" name="maksBredde" required
+                    placeholder="{{verdier.maksBredde}}">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm">
+                <label for="minLengde" class="form-label">Minimum lengde:</label>
+                <input type="number" min="0" class="form-control" id="minLengde" name="minLengde" required
+                    placeholder="{{verdier.minLengde}}">
+            </div>
+            <div class="col-sm">
+                <label for="maksLengde" class="form-label">Maksimum lengde:</label>
+                <input type="number" min="0" class="form-control" id="maksLengde" name="maksLengde" required
+                    placeholder="{{verdier.maksLengde}}">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm center">
+                <input type="submit" class="btn btn-primary" value="Søk etter tepper">
+            </div>
+        </div>
+    </div>
+</form>
+{% endif %}
+
+{% endblock content %}

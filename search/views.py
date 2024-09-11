@@ -9,9 +9,9 @@ def home(request):
         "posts": Post.objects.all(),
     }
 
-    return render(request,'blog/home.html',context)
+    return render(request,'search/home.html',context)
 
-def søk(request):
+def sok(request):
     
     pris = request.GET.get('Pris')
     
@@ -30,4 +30,4 @@ def søk(request):
         "verdier": {"pris":pris, "minBredde":minBredde, "maksBredde":maksBredde, "minLengde":minLengde, "maksLengde":maksLengde}
     }
       
-    return render(request,'blog/søk.html',context)
+    return render(request,'search/sok.html',context)

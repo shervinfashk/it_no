@@ -1,6 +1,7 @@
 body {
     background: #fafafa;
     color: #333333;
+    padding-bottom: 30px;
 }
 
 
@@ -39,12 +40,15 @@ header {
     text-align: center;
 }
 
+p {
+   text-align: center; 
+}
+
 nav {
     background-color: #444;
     padding: 10px;
     text-align: center;
 }
-
 nav ul {
     list-style: none;
     padding: auto;
@@ -77,16 +81,19 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px;
-    position: fixed;
+    position: fixed; /* For å holde footeren fast i bunnen */
     bottom: 0;
     width: 100%;
-    height: 50px;
+    height: 60px;
 }
+
 
 footer a {
     color: #fff;
 }
 
 main {
-    padding: 20px; /* Legger til 20 piksler padding på alle kanter */
+    padding: 50px; /* Legger til 20 piksler padding på alle kanter */
+    padding-bottom: 50px; 
+    
 }
