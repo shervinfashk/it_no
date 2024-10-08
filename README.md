@@ -22,3 +22,11 @@ Den andre utfordringen kan virke litt spesiell, men det var mange duplikater av 
 Opprinnelig ble prosjektet hostet på en Linux-server via DigitalOcean, men nå kjøres det på localhost når det brukes. Jeg har derfor laget en kort videodemonstrasjon som viser hvordan nettsiden fungerer.
 
 [Video Demo](youtube.com) // kommer snart
+
+
+<table>
+    <tr>
+      <td><img src="https://github.com/user-attachments/assets/427fb478-2687-485a-98bf-c8fadf8b20e2" alt="Skjermbilde 2024-10-08 113119" width="300"/></td>
+        <td><img src="https://github.com/user-attachments/assets/30aaa82e-e2fa-4c32-89fc-381e88dfd858" alt="Skjermbilde 2024-10-08 113303" width="300"/></td>
+    </tr>
+</table>
